@@ -1,7 +1,12 @@
 package com.kodilla.testing.collection;
-import com.kodilla.testing.collection.OddNumbersExterminator;
-import org.junit.*;
-import java.util.*;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CoolectionTestSuite {
     @Before
@@ -27,8 +32,8 @@ public class CoolectionTestSuite {
     public void testOddNumbersExterminatorNormalList() {
         //Given
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
-        ArrayList<Integer> normalList = new ArrayList<Integer>(Arrays.asList(12,178,36,14,13,15));
-        ArrayList<Integer> evenList = new ArrayList<>(Arrays.asList(12,178,36,14));
+        ArrayList<Integer> normalList = new ArrayList<Integer>(Arrays.asList(12,36,14,13,15));
+        ArrayList<Integer> evenList = new ArrayList<>(Arrays.asList(12,36,14));
         //When
         ArrayList<Integer> numbersList = exterminator.exterminate(normalList);
         System.out.println("testing " + numbersList );
