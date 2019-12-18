@@ -4,37 +4,8 @@ import com.kodilla.testing.forum.ForumComment;
 import java.util.*;
 
 public class ShapeCollector {
-    private Shape shape;
+
     private ArrayList<Shape> figures = new ArrayList<Shape>();
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        ShapeCollector collector = (ShapeCollector) o;
-
-        if (!shape.equals(collector.shape)) return false;
-        return figures.equals(collector.figures);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = shape.hashCode();
-        result = 31 * result + figures.hashCode();
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "ShapeCollector{" +
-                "shape=" + shape +
-                '}';
-    }
-
-    public ShapeCollector(Shape shape) {
-        this.shape = shape;
-    }
 
     public void addFigure(Shape shape) {
         figures.add(shape);

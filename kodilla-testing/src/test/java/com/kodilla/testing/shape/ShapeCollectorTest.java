@@ -28,9 +28,10 @@ public class ShapeCollectorTest {
     @Test
     public void testAddFigure() {
         //Given
-        ShapeCollector collector = new ShapeCollector(new Circle());
+        ShapeCollector collector = new ShapeCollector();
+        Shape circle = new Circle();
         //When
-        collector.addFigure(new Circle());
+        collector.addFigure(circle);
         //Then
         assertEquals(1, collector.getSize());
     }
@@ -38,7 +39,7 @@ public class ShapeCollectorTest {
     @Test
     public void testRemoveFigure() {
         //Given
-        ShapeCollector collector = new ShapeCollector(new Circle());
+        ShapeCollector collector = new ShapeCollector();
         Shape triangle = new Triangle();
         collector.addFigure(triangle);
         //When
@@ -50,7 +51,7 @@ public class ShapeCollectorTest {
     @Test
     public void testGetFigure() {
         //Given
-        ShapeCollector collector = new ShapeCollector(new Triangle());
+        ShapeCollector collector = new ShapeCollector();
         Shape circle = new Circle();
         collector.addFigure(circle);
         //When
@@ -63,7 +64,7 @@ public class ShapeCollectorTest {
     @Test
     public void testShowFigures() {
         //Given
-        ShapeCollector collector = new ShapeCollector(new Circle());
+        ShapeCollector collector = new ShapeCollector();
         Shape circle = new Circle();
         Shape triangle = new Triangle();
         Shape square = new Square();
