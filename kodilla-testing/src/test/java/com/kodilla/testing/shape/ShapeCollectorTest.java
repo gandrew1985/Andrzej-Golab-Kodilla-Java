@@ -55,27 +55,8 @@ public class ShapeCollectorTest {
         Shape circle = new Circle();
         collector.addFigure(circle);
         //When
-        Shape retrievedShape;
-        retrievedShape = collector.getFigure(0);
-        //Then
-        assertEquals(circle,retrievedShape);
-    }
-
-    @Test
-    public void testShowFigures() {
-        //Given
-        ShapeCollector collector = new ShapeCollector();
-        Shape circle = new Circle();
-        Shape triangle = new Triangle();
-        Shape square = new Square();
-        collector.addFigure(circle);
-        collector.addFigure(triangle);
-        collector.addFigure(square);
-        //When
-        collector.showFigures();
         Shape retrievedShape = collector.getFigure(0);
         //Then
-        assertEquals(3, collector.getSize());
-        assertEquals(circle, retrievedShape);
+        assertEquals(circle,retrievedShape);
     }
 }
