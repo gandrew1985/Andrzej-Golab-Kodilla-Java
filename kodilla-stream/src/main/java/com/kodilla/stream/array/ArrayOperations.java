@@ -7,11 +7,11 @@ public interface ArrayOperations {
 
     static OptionalDouble getAverage(int[] numbers) {
         IntStream array = IntStream.range(0, numbers.length)
-                .map(n -> n = numbers[n]);
+                .map(n -> numbers[n]);
         array.forEach(System.out::println);
 
         OptionalDouble average = IntStream.range(0, numbers.length)
-                .map(n -> n = numbers[n])
+                .map(n -> numbers[n])
                 .average();
         return average;
     }

@@ -17,7 +17,7 @@ public class ArrayOperationsTestSuite {
         OptionalDouble resultAverage = ArrayOperations.getAverage(numbers);
         //Then
         OptionalDouble expectedAverage = IntStream.range(0, 20)
-                .map(n -> n = numbers[n])
+                .map(n -> numbers[n])
                 .average();
         assertEquals(expectedAverage, resultAverage);
     }
