@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class Board {
-
     private final List<TaskList> taskLists = new ArrayList<>();
     private final String name;
 
@@ -30,9 +29,9 @@ public final class Board {
 
     @Override
     public String toString() {
-        return "Board{" +
-                "taskLists=" + taskLists +
-                ", name='" + name + '\'' +
+        return "Board{" + "\n" +
+                "name='" + name + '\'' + ",\n" +
+                "taskLists=" + taskLists + "\n" +
                 '}';
     }
 }

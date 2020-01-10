@@ -3,7 +3,6 @@ package com.kodilla.stream.portfolio;
 import java.time.LocalDate;
 
 public final class Task {
-
     private final String title;
     private final String description;
     private final User assignedUser;
@@ -11,7 +10,8 @@ public final class Task {
     private final LocalDate created;
     private final LocalDate deadline;
 
-    public Task(final String title,final String description,final User assignedUser,final User creator,
+    public Task(final String title, final String description,
+                final User assignedUser, final User creator,
                 final LocalDate created, final LocalDate deadline) {
         this.title = title;
         this.description = description;
