@@ -8,16 +8,15 @@ public class FlightFinder {
     public void findFlight(Flight flight) throws RouteNotFoundException {
         Map<String, Boolean> flights = new HashMap<>();
 
-        flights.put("Cracow", true);
-        flights.put("Luton", true);
+        flights.put("Cracow", false);
+        flights.put("Luton", false);
         flights.put("Heathrow", true);
 
-        for (Map.Entry<String, Boolean> entry : flights.entrySet()) {
-            if (entry.getKey().equals(flight.getArrivalAirport())) {
-                System.out.println("You can fly to this destination");
-            } else {
-                throw new RouteNotFoundException("Airport not found, try another location");
-            }
+        if ((flights.containsKey(flight.getArrivalAirport()))
+                && (flights.get(flight.getArrivalAirport()))) {
+            System.out.println("You can fly to this destination");
+        } else {
+            throw new RouteNotFoundException("You cant flight to this destination, try another location");
         }
     }
 }
