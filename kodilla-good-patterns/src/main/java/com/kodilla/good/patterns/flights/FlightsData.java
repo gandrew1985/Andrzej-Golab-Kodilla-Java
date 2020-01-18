@@ -8,7 +8,7 @@ public final class FlightsData {
     private final ArrayList<Flight> flightsList = new ArrayList<>();
 
     public FlightsData() {
-        flightsList.add(new Flight("Krakow", "",
+        flightsList.add(new Flight("Gatwick", "",
                 "Wroclaw", 324));
         flightsList.add(new Flight("Warsaw", "Luton",
                 "Washington", 276));

@@ -3,13 +3,13 @@ package com.kodilla.good.patterns.flights;
 public class Application {
 
     public static void main(String[] args) {
-        FindFlightWithStopover findFlightWithStopover = new FindFlightWithStopover();
-        findFlightWithStopover.findFlight();
+        FindRequestRetriever findRequestRetriever = new FindRequestRetriever();
+        FindFromRequest findFromRequest = findRequestRetriever.retrieveFrom();
+        FindToRequest findToRequest = findRequestRetriever.retrieveTo();
+        FindThroughRequest findThroughRequest = findRequestRetriever.retrieveThrough();
 
-        FindFlightFromDepAirport findFlightFromDepAirport = new FindFlightFromDepAirport();
-        findFlightFromDepAirport.findFlight();
-
-        FindFlightToArrivalAirport findFlightToArrivalAirport = new FindFlightToArrivalAirport();
-        findFlightToArrivalAirport.findFlight();
+        FlightFinderProcessor flightFinderProcessor = new FlightFinderProcessor(new FindFlightFrom(),
+                new FindFlightTo(), new FindFlightThrough());
+        flightFinderProcessor.process(findFromRequest, findToRequest, findThroughRequest);
     }
 }

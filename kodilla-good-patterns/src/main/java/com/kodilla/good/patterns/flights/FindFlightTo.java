@@ -2,15 +2,17 @@ package com.kodilla.good.patterns.flights;
 
 import java.util.stream.Collectors;
 
-public class FindFlightWithStopover implements FlightFinder {
+public class FindFlightTo implements FinderTo {
     @Override
-    public void findFlight() {
+    public boolean findTo(String arrivalAirport) {
 
         FlightsData flightsData = new FlightsData();
+
         flightsData.getFlightList().stream()
-                .filter(fl -> fl.getStopoverAirport().equals("Luton"))
+                .filter(fl -> fl.getArrivalAirport().equals(arrivalAirport))
                 .collect(Collectors.toMap(Flight::getFlightNumber, fl -> fl))
                 .entrySet().stream()
                 .forEach(System.out::println);
+        return true;
     }
 }
