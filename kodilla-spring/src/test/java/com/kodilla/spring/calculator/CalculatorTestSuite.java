@@ -7,6 +7,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static org.junit.Assert.assertEquals;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CalculatorTestSuite {
@@ -22,6 +24,9 @@ public class CalculatorTestSuite {
         double mul = calculator.mul(10.0, 5.0);
         double div = calculator.div(10.0, 5.0);
         //Then
-        //do nothing
+        assertEquals(15.0, add, 0.0);
+        assertEquals(5.0, sub, 0.0);
+        assertEquals(50.0, mul, 0.0);
+        assertEquals(2.0, div, 0.0);
     }
 }
