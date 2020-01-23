@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.stream.IntStream;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class LibraryTestSuite {
 
@@ -43,8 +44,10 @@ public class LibraryTestSuite {
         System.out.println(library);
         System.out.println(clonedLibrary);
         System.out.println(deepClonedLibrary);
-        assertEquals(10, library.getBooks().size());
-        assertEquals(10, clonedLibrary.getBooks().size());
+        assertEquals(9, library.getBooks().size());
+        assertEquals(9, clonedLibrary.getBooks().size());
         assertEquals(10, deepClonedLibrary.getBooks().size());
+        assertEquals(library.getBooks().size(),clonedLibrary.getBooks().size());
+        assertNotEquals(library.getBooks().size(),deepClonedLibrary.getBooks().size());
     }
 }
