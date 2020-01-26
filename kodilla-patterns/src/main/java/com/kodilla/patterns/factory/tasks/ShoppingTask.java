@@ -1,11 +1,10 @@
 package com.kodilla.patterns.factory.tasks;
 
-import java.time.LocalDate;
-
 public final class ShoppingTask implements Task {
     private final String taskName;
     private final String whatToBuy;
     private final double quantity;
+    private boolean isTaskExecuted = false;
 
     public ShoppingTask(String taskName, String whatToBuy, double quantity) {
         this.taskName = taskName;
@@ -15,7 +14,7 @@ public final class ShoppingTask implements Task {
 
     @Override
     public void executeTask() {
-        System.out.println("Im going to do: " + taskName);
+        isTaskExecuted = true;
     }
 
     @Override
@@ -25,11 +24,7 @@ public final class ShoppingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        LocalDate friday = LocalDate.of(2020, 1, 31);
-        if (LocalDate.now().isBefore(friday)) {
-            return false;
-        }
-        return true;
+        return isTaskExecuted;
     }
 
     public String getWhatToBuy() {

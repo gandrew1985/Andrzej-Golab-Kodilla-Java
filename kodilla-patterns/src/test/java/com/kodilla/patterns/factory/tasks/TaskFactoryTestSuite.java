@@ -15,7 +15,7 @@ public class TaskFactoryTestSuite {
         shopping.executeTask();
         //
         assertEquals("Weekend Shopping", shopping.getTaskName());
-        assertFalse(shopping.isTaskExecuted());
+        assertTrue(shopping.isTaskExecuted());
     }
 
     @Test
@@ -39,6 +39,6 @@ public class TaskFactoryTestSuite {
         driving.executeTask();
         //Then
         assertEquals("Give me a lift", driving.getTaskName());
-        assertFalse(driving.isTaskExecuted());
+        assertTrue(driving.isTaskExecuted());
     }
 }
