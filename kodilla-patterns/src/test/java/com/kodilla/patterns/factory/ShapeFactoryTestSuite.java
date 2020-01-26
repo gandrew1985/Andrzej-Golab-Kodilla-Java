@@ -37,4 +37,15 @@ public class ShapeFactoryTestSuite {
         assertEquals("The long rectangle", rectangle.getName());
         assertEquals(15*2.5,rectangle.getArea(),0);
     }
+
+    @Test
+    public void testFactoryCircleOne() {
+        //Given
+        ShapeFactory shapeFactory = new ShapeFactory();
+        //Then
+        Shape circle1 = shapeFactory.makeShape(ShapeFactory.CIRCLE1);
+        //Then
+        assertEquals("The 2nd circle",circle1.getName());
+        assertEquals(Math.PI*Math.pow(3.5,2),circle1.getArea(),0);
+    }
 }
