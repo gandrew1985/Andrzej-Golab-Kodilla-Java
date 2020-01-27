@@ -15,7 +15,7 @@ public class TaskFactoryTestSuite {
         shopping.executeTask();
         //
         assertEquals("Weekend Shopping", shopping.getTaskName());
-        assertTrue(shopping.isTaskExecuted());
+        assertFalse(shopping.isTaskExecuted());
     }
 
     @Test
