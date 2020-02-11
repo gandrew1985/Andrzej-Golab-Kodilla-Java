@@ -9,10 +9,10 @@ import java.math.BigDecimal;
 public class Item {
 
     private int id;
-    private Product product;
     private BigDecimal price;
     private int quantity;
     private BigDecimal value;
+    private Product product;
     private Invoice invoice;
 
     public Item(BigDecimal price, int quantity, BigDecimal value) {

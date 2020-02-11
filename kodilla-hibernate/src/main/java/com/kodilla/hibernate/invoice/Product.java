@@ -1,7 +1,5 @@
 package com.kodilla.hibernate.invoice;
 
-import ch.qos.logback.classic.pattern.LineSeparatorConverter;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
