@@ -5,6 +5,12 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery(
+        name = "Company.findCompanyByLetters",
+        query = "SELECT * FROM COMPANIES " +
+                "WHERE COMPANY_NAME LIKE :name% ",
+        resultClass = Company.class
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
