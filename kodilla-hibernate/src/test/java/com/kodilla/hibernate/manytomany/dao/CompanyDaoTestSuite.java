@@ -101,7 +101,7 @@ public class CompanyDaoTestSuite {
         int id = johnSmith.getId();
 
         //When
-        List<Company> companies = companyDao.findCompanyByLetters("Sof%");
+        List<Company> companies = companyDao.findCompanyByLetters("Sof");
 
         //Then
         assertEquals(1, companies.size());
