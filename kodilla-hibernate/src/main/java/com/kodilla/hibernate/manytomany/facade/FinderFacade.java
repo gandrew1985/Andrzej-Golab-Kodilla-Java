@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public final class FinderDto {
+public final class FinderFacade {
 
     @Autowired
     private EmployeeDao employeeDao;

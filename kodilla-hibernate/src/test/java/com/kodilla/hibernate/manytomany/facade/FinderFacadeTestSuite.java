@@ -19,10 +19,10 @@ import static org.junit.Assert.*;
 @Transactional
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class FinderDtoTestSuite {
+public class FinderFacadeTestSuite {
 
     @Autowired
-    private FinderDto finderDto;
+    private FinderFacade finderFacade;
 
     @Autowired
     private EmployeeDao employeeDao;
@@ -42,7 +42,7 @@ public class FinderDtoTestSuite {
         employeeDao.save(lindaKovalsky);
 
         //When
-        List<Employee> findByAnyLetter = finderDto.findEmployee("val");
+        List<Employee> findByAnyLetter = finderFacade.findEmployee("val");
         System.out.println("size list is:" + findByAnyLetter.size());
 
         //Then
@@ -61,7 +61,7 @@ public class FinderDtoTestSuite {
         companyDao.save(greyMatter);
 
         //When
-        List<Company> companies = finderDto.findCompany("war");
+        List<Company> companies = finderFacade.findCompany("war");
         //Then
         assertEquals(1, companies.size());
     }
