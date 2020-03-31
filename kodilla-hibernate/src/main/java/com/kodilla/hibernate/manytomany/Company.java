@@ -1,18 +1,25 @@
 package com.kodilla.hibernate.manytomany;
 
+import org.springframework.stereotype.Service;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQuery(
+        name = "Company.findCompanyByAnyLetters",
+        query = "FROM Company WHERE name LIKE CONCAT('%', :NAME, '%')"
+)
 @NamedNativeQuery(
         name = "Company.findCompanyByLetters",
         query = "SELECT * FROM COMPANIES " +
-                "WHERE COMPANY_NAME LIKE CONCAT(:name, '%') ",
+                "WHERE COMPANY_NAME LIKE CONCAT(:NAME , '%') ",
         resultClass = Company.class
 )
 @Entity
 @Table(name = "COMPANIES")
+@Service
 public class Company {
 
     private int id;
