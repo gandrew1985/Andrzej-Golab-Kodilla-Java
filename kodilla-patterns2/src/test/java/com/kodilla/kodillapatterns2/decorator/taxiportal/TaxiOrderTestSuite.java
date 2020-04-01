@@ -73,5 +73,4 @@ public class TaxiOrderTestSuite {
         //Then
         assertEquals("Drive a course by MyTaxi Network + child seat", description);
     }
-
 }
