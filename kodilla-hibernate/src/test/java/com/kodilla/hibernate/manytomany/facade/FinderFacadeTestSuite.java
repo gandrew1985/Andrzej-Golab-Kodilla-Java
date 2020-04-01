@@ -47,6 +47,9 @@ public class FinderFacadeTestSuite {
 
         //Then
         assertEquals(1, findByAnyLetter.size());
+
+        //Clean up
+        employeeDao.deleteAll();
     }
 
     @Test
