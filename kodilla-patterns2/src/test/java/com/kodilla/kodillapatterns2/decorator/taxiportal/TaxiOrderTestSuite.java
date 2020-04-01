@@ -73,4 +73,60 @@ public class TaxiOrderTestSuite {
         //Then
         assertEquals("Drive a course by MyTaxi Network + child seat", description);
     }
+
+    @Test
+    public void testUberWithTwoChildSeatsGetCost() {
+        //Given
+        TaxiOrder theOrder = new BasicTaxiOrder();
+        theOrder = new UberNetworkOrderDecorator(theOrder);
+        theOrder = new ChildSeatDecorator(theOrder);
+        theOrder = new ChildSeatDecorator(theOrder);
+        //When
+        BigDecimal theCost = theOrder.getCost();
+        //Then
+        assertEquals(new BigDecimal(29),theCost);
+    }
+
+    @Test
+    public void testUberWithTwoChildSeatsGetDescription() {
+        //When
+        TaxiOrder theOrder = new BasicTaxiOrder();
+        theOrder = new UberNetworkOrderDecorator(theOrder);
+        theOrder = new ChildSeatDecorator(theOrder);
+        theOrder = new ChildSeatDecorator(theOrder);
+        //When
+        String description = theOrder.getDescription();
+        //Then
+        assertEquals("Drive a course by Uber Network + child seat + child seat", description);
+    }
+
+    @Test
+    public void testVipTaxiWithChildSeatExpressGetCost() {
+        //Given
+        TaxiOrder theOrder = new BasicTaxiOrder();
+        theOrder = new MyTaxiNetworkOrderDecorator(theOrder);
+        theOrder = new ExpressDecorator(theOrder);
+        theOrder = new ChildSeatDecorator(theOrder);
+        theOrder = new VipCarDecorator(theOrder);
+        System.out.println("total cost " + theOrder.getCost() );
+        //When
+        BigDecimal theCost = theOrder.getCost();
+        //Then
+        assertEquals(new BigDecimal(52),theCost);
+    }
+
+    @Test
+    public void testVipTaxiWithChildSeatExpressGetDescription() {
+        //Given
+        TaxiOrder theOrder = new BasicTaxiOrder();
+        theOrder = new MyTaxiNetworkOrderDecorator(theOrder);
+        theOrder = new ExpressDecorator(theOrder);
+        theOrder = new ChildSeatDecorator(theOrder);
+        theOrder = new VipCarDecorator(theOrder);
+        System.out.println(theOrder.getDescription());
+        //When
+        String description = theOrder.getDescription();
+        //Then
+        assertEquals("Drive a course by MyTaxi Network express service + child seat variant VIP", description);
+    }
 }
