@@ -1,7 +1,5 @@
 package com.kodilla.kodillapatterns2.decorator.pizza;
 
-import com.kodilla.kodillapatterns2.decorator.taxiportal.TaxiOrder;
-
 import java.math.BigDecimal;
 
 public abstract class AbstractPizzaOrderDecorator implements PizzaOrder {
