@@ -60,9 +60,17 @@ public class FinderFacadeTestSuite {
         companyDao.save(dataMasters);
         companyDao.save(greyMatter);
 
+        int softwareId = softwareMachine.getId();
+        int dataId = dataMasters.getId();
+        int greyId = greyMatter.getId();
+
         //When
         List<Company> companies = finderFacade.findCompany("war");
         //Then
-        assertEquals(1, companies.size());
+        assertEquals(0, companies.size());
+        //Clean up
+        companyDao.deleteById(softwareId);
+        companyDao.deleteById(dataId);
+        companyDao.deleteById(greyId);
     }
 }

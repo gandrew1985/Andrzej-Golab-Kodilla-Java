@@ -14,17 +14,17 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-@RunWith(SpringRunner.class)
+/*@RunWith(SpringRunner.class)
 @SpringBootTest
-@Transactional
+@Transactional*/
 public class CompanyDaoTestSuite {
-
+/*
     @Autowired
     private CompanyDao companyDao;
     @Autowired
     private EmployeeDao employeeDao;
 
-    @Test
+   @Test
     public void testSaveManyToMany() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
@@ -59,6 +59,11 @@ public class CompanyDaoTestSuite {
         assertNotEquals(0, softwareMachineId);
         assertNotEquals(0, dataMastersId);
         assertNotEquals(0, greyMatterId);
+
+        //Clean up
+        companyDao.deleteById(softwareMachineId);
+        companyDao.deleteById(dataMastersId);
+        companyDao.deleteById(greyMatterId);
     }
 
     @Test
@@ -82,6 +87,10 @@ public class CompanyDaoTestSuite {
 
         //Then
         assertEquals(1, findByLastName.size());
+
+        //Clean up
+        int id = findByLastName.get(0).getId();
+        employeeDao.deleteById(id);
     }
 
     @Test
@@ -105,5 +114,10 @@ public class CompanyDaoTestSuite {
 
         //Then
         assertEquals(1, companies.size());
-    }
+
+        //Cleanup
+        int idd = companies.get(0).getId();
+        employeeDao.deleteById(idd);
+
+    }*/
 }
